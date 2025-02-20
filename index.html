@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтернет магазин</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        h1 {
+            color: #A259FF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .category-button {
+            color: #A259FF;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #A259FF;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .category-button:hover {
+            background: #A259FF;
+            color: white;
+        }
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function showCategory(category) {
+            let sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ласкаво просимо в FutureTech</h1>
+        <p>Передові технології для вашого ПК</p>
+        
+        <h2>Категорії</h2>
+        <button class="category-button" onclick="showCategory('video_cards')">Відеокарти</button>
+        <button class="category-button" onclick="showCategory('processors')">Процесори</button>
+        <button class="category-button" onclick="showCategory('cases')">Корпуси</button>
+        <button class="category-button" onclick="showCategory('keyboards')">Клавіатури</button>
+        <button class="category-button" onclick="showCategory('mice')">Мишки</button>
+        
+        <div id="video_cards" class="content-section">
+            <h2>Відеокарти</h2>
+            <p>Найкращі відеокарти: Radeon RX 7900 GRE, GeForce 4070 Super, Radeon RX 7600.</p>
+        </div>
+        
+        <div id="processors" class="content-section">
+            <h2>Процесори</h2>
+            <p>Потужні процесори: Core-i5 13600К, AMD Ryzen 7 7800X3D, AMD Ryzen 9 7950X3D.</p>
+        </div>
+        
+        <div id="cases" class="content-section">
+            <h2>Корпуси</h2>
+            <p>Популярні корпуси: Fractal Design North, MSI MAG FORGE M100R, Lian Li Lancool 216 ARGB.</p>
+        </div>
+        
+        <div id="keyboards" class="content-section">
+            <h2>Клавіатури</h2>
+            <p>Найкращі клавіатури: Logitech G915, Razer Huntsman Elite, Corsair K95 RGB Platinum.</p>
+        </div>
+        
+        <div id="mice" class="content-section">
+            <h2>Мишки</h2>
+            <p>Топові мишки: Logitech G Pro X Superlight, Razer DeathAdder V3, SteelSeries Aerox 3.</p>
+        </div>
+        
+        <div class="video-container">
+            <h2>Відео-огляд наших товарів</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9JvyF5q6rlw" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
